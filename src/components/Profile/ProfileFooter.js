@@ -2,13 +2,8 @@ import React from 'react';
 import "./profile.css";
 import {SocialIcon} from 'react-social-icons';
 
-export const Profile = () => (
-    <div className="container">
-        <img src="/assets/img/avatar.png" className="avatar"/>
-        <div>
-            <div className="name">Gwenaël Girod</div>
-            <div className="job-title">Développeur FullStack ReactJS & Native</div>
-        </div>
+export const ProfileFooter = () => (
+    <div class="footer">
         <div>
             <SocialIcon target="_blank" rel="noopener noreferrer" url="https://github.com/Dogson"
                         className="social-icon"
@@ -19,5 +14,5 @@ export const Profile = () => (
                         className="social-icon" style={{height: 40, width: 40, margin: '10px'}}/>
         </div>
     </div>
-);
 
+);
