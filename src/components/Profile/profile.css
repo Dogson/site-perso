@@ -1,0 +1,70 @@
+.profile-container {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--bluegreen);
+    width: 100vw;
+    max-width:100%;
+    color: white;
+}
+
+.avatar {
+    border: 3px solid var(--yellow);
+    height: 200px;
+    width: 200px;
+    z-index: 1;
+    border-radius: 100%;
+}
+
+.name {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 15px;
+    color: white;
+    font-family: var(--title-font);
+}
+
+
+.job-title {
+    font-size: xx-large;
+    opacity: 0.8;
+    margin: 15px;
+    color: white;
+    font-family: var(--title-font);
+}
+
+.social-icon {
+    opacity: 0.8;
+}
+
+.social-icon:hover {
+    opacity: 1;
+}
+
+.footer {
+    position: fixed;
+    bottom: -100px;
+    width: 100vw;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    transform: translateY(0px);
+    transition: transform 0.2s linear;
+}
+
+.footer.visible {
+    transform: translateY(-100px);
+}
+
+.btn.primary {
+    background-color: var(--yellow);
+    color: var(--bluegreen) !important;
+}
+.btn.secondary {
+    border: 2px solid var(--yellow);
+    color: var(--yellow) !important;
+}

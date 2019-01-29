@@ -1,0 +1,12 @@
+.description-container {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--greenblue);
+    color: white;
+    width: 100vw;
+    max-width:100%;
+}
