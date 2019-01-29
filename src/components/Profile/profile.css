@@ -1,14 +1,18 @@
-.container {
+.profile-container {
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    background-color: var(--bluegreen);
+    width: 100vw;
+    max-width:100%;
+    color: white;
 }
 
 .avatar {
-    border: 3px solid rgb(255, 230, 230);
+    border: 3px solid var(--yellow);
     height: 200px;
     width: 200px;
     z-index: 1;
@@ -19,44 +23,25 @@
     font-size: xx-large;
     font-weight: bold;
     margin: 15px;
+    color: white;
+    font-family: var(--title-font);
 }
 
 
 .job-title {
-    font-style: italic;
-    font-size: x-large;
-    opacity: 0.7;
+    font-size: xx-large;
+    opacity: 0.8;
     margin: 15px;
+    color: white;
+    font-family: var(--title-font);
 }
 
 .social-icon {
-    opacity: 0.7
+    opacity: 0.8;
 }
 
 .social-icon:hover {
     opacity: 1;
-}
-
-.header {
-    position: fixed;
-    top: -100px;
-    width: 100vw;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    transform: translateY(0px);
-    transition: transform 0.2s linear;
-}
-
-.header.visible {
-    transform: translateY(100px);
-}
-
-.header .avatar {
-    border: 2px solid rgb(255, 230, 230);
-    height: 80px;
-    width: 80px;
 }
 
 .footer {
@@ -66,11 +51,20 @@
     z-index: 2;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: transparent;
     transform: translateY(0px);
     transition: transform 0.2s linear;
 }
 
 .footer.visible {
     transform: translateY(-100px);
+}
+
+.btn.primary {
+    background-color: var(--yellow);
+    color: var(--bluegreen) !important;
+}
+.btn.secondary {
+    border: 2px solid var(--yellow);
+    color: var(--yellow) !important;
 }

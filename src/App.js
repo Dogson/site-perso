@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Profile} from "./components/Profile/Profile";
-import {ProfileHeader} from "./components/Profile/ProfileHeader";
 import {ProfileFooter} from "./components/Profile/ProfileFooter";
 import {Description} from "./components/Description/Description";
 
@@ -32,7 +31,6 @@ class App extends Component {
             <div className="App">
                 <Profile/>
                 <Description/>
-               <ProfileHeader visible={this.state.renderHeaderFooter} />
                 <ProfileFooter visible={this.state.renderHeaderFooter} />
             </div>
         );
