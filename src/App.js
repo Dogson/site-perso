@@ -27,17 +27,13 @@ class App extends Component {
         }
     }
 
-    renderHeaderFooter() {
-        if (this.state.renderHeaderFooter) {
-            return [<ProfileHeader/>, <ProfileFooter/>];
-        }
-    }
     render() {
         return (
             <div className="App">
                 <Profile/>
                 <Description/>
-                {this.renderHeaderFooter()}
+               <ProfileHeader visible={this.state.renderHeaderFooter} />
+                <ProfileFooter visible={this.state.renderHeaderFooter} />
             </div>
         );
     }

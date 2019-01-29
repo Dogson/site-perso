@@ -1,9 +1,12 @@
 import React from 'react';
 import "./profile.css";
 
-export const ProfileHeader = () => (
-    <div class="header">
-        <img src="/assets/img/avatar.png" className="avatar"/>
-    </div>
+export class ProfileHeader extends React.Component {
 
-);
+    render() {
+        let className = this.props.visible ? 'visible' : 'invisible';
+        return <div className={"header " + className}>
+            <img src="/assets/img/avatar.png" className="avatar"/>
+        </div>
+    }
+}

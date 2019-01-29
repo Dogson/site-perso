@@ -39,12 +39,18 @@
 
 .header {
     position: fixed;
-    top: 0;
+    top: -100px;
     width: 100vw;
     z-index: 2;
     display: flex;
     justify-content: center;
     background-color: white;
+    transform: translateY(0px);
+    transition: transform 0.2s linear;
+}
+
+.header.visible {
+    transform: translateY(100px);
 }
 
 .header .avatar {
@@ -55,10 +61,16 @@
 
 .footer {
     position: fixed;
-    bottom: 0;
+    bottom: -100px;
     width: 100vw;
     z-index: 2;
     display: flex;
     justify-content: center;
     background-color: white;
+    transform: translateY(0px);
+    transition: transform 0.2s linear;
+}
+
+.footer.visible {
+    transform: translateY(-100px);
 }
