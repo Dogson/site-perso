@@ -1,0 +1,38 @@
+.container {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    border: 3px solid rgb(255, 230, 230);
+    height: 200px;
+    width: 200px;
+    z-index: 1;
+    border-radius: 100%;
+}
+
+.name {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 15px;
+}
+
+
+.job-title {
+    font-style: italic;
+    font-size: x-large;
+    opacity: 0.7;
+    margin: 15px;
+}
+
+.social-icon {
+    opacity: 0.7
+}
+
+.social-icon:hover {
+    opacity: 1;
+}
