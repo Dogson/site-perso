@@ -20,20 +20,24 @@
 }
 
 .name {
-    font-size: xx-large;
-    font-weight: bold;
+    font-size: 3em;
+    /*font-weight: bold;*/
     margin: 15px;
     color: white;
     font-family: var(--title-font);
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 
 .job-title {
-    font-size: xx-large;
+    font-size: 2.5em;
     opacity: 0.8;
     margin: 15px;
     color: white;
     font-family: var(--title-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .social-icon {
