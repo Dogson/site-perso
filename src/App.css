@@ -19,6 +19,18 @@
     height: 50px;
 }
 
+.flexStart {
+    align-self: flex-start;
+}
+
+.flexCenter {
+    align-self: center;
+}
+
+.flexEnd {
+    align-self: flex-end;
+}
+
 .btn:hover {
     opacity: 1;
 }

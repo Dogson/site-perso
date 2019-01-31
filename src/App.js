@@ -12,6 +12,7 @@ class App extends Component {
 
         this.handleScroll = this.handleScroll.bind(this);
     }
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
@@ -30,7 +31,7 @@ class App extends Component {
             <div className="App">
                 <Profile/>
                 <Description/>
-                <ProfileFooter visible={this.state.renderHeaderFooter} />
+                <ProfileFooter visible={this.state.renderHeaderFooter}/>
             </div>
         );
     }
