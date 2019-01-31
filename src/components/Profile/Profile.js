@@ -6,7 +6,7 @@ import {Button} from 'react-bootstrap';
 export const Profile = () => (
     <div className="profile-container">
         <div>
-            <img src="/assets/img/avatar.png" className="avatar"/>
+            <img src="/assets/img/avatar.png" alt="Gwenaël" className="avatar"/>
             <div className="name">Gwenaël Girod</div>
         </div>
         <div className="job-title">Développeur FullStack ReactJS & Native</div>
