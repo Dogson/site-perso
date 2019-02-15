@@ -16,6 +16,7 @@
 
 .description-container .title-container {
     align-self: flex-start;
+    margin-top: 70px;
 }
 
 .description-container .title {
