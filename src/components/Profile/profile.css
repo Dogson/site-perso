@@ -57,7 +57,7 @@
     justify-content: center;
     background-color: transparent;
     transform: translateY(0px);
-    transition: transform 0.2s linear;
+    transition: transform 0.4s linear;
 }
 
 .footer.visible {
