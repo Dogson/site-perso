@@ -28,13 +28,13 @@ const DescriptionBody = ({isVisible}) => {
         className = 'visible';
     }
     return <div className={"body " + className}>
-        <TrackVisibility partialVisibility className="flex-grow">
+        <TrackVisibility partialVisibility>
             <DescriptionSection1/>
         </TrackVisibility>
-        <TrackVisibility partialVisibility className="flex-grow">
+        <TrackVisibility partialVisibility>
             <DescriptionSection2/>
         </TrackVisibility>
-        <TrackVisibility partialVisibility className="flex-grow">
+        <TrackVisibility partialVisibility>
             <DescriptionSection3/>
         </TrackVisibility>
     </div>

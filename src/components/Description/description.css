@@ -7,11 +7,12 @@
 }
 
 .description-container .wrapper {
-    max-width: 1500px;
+    max-width: 1150px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin: auto;
 }
 
 .description-container .title-container {
@@ -26,10 +27,6 @@
     letter-spacing: 3px;
     opacity: 0;
     margin-bottom: 80px;
-}
-
-.flex-grow {
-    flex: 1 1 0;
 }
 
 .description-container .title.visible {
@@ -89,7 +86,8 @@
     padding-left: 8px;
     padding-right: 8px;
     min-height: 400px;
-    flex: 1 1 0;
+    min-width: 270px;
+    max-width: 320px;
 }
 
 .description-container .card-icon {
