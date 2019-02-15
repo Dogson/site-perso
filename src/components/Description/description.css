@@ -7,7 +7,7 @@
     background-color: var(--greenblue);
     width: 100vw;
     max-width: 100%;
-    padding: 50px;
+    padding: 150px;
 }
 
 .description-container .title-container {
@@ -53,3 +53,17 @@
     transition: all 0.8s linear 0.3s;
 }
 
+.description-container .card-container {
+    flex-direction: column;
+}
+
+.description-container .card-icon {
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.description-container .card-body {
+
+}
