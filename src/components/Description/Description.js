@@ -5,10 +5,12 @@ import {DescriptionCard} from "./DescriptionCard";
 
 export const Description = () => {
     return <div className="description-container">
-        <TrackVisibility className="title-container">
-            <DescriptionTitle/>
-        </TrackVisibility>
-        <DescriptionBody/>
+        <div class="wrapper">
+            <TrackVisibility className="title-container" partialVisibility>
+                <DescriptionTitle/>
+            </TrackVisibility>
+            <DescriptionBody/>
+        </div>
     </div>
 };
 
@@ -26,13 +28,13 @@ const DescriptionBody = ({isVisible}) => {
         className = 'visible';
     }
     return <div className={"body " + className}>
-        <TrackVisibility className="flexStart">
+        <TrackVisibility partialVisibility className="flex-grow">
             <DescriptionSection1/>
         </TrackVisibility>
-        <TrackVisibility className="flexCenter">
+        <TrackVisibility partialVisibility className="flex-grow">
             <DescriptionSection2/>
         </TrackVisibility>
-        <TrackVisibility className="flexEnd">
+        <TrackVisibility partialVisibility className="flex-grow">
             <DescriptionSection3/>
         </TrackVisibility>
     </div>
@@ -43,7 +45,7 @@ const DescriptionSection1 = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"body-section " + className}><DescriptionCard className={"body-section " + className} type="skills"/></div>;
+    return <div className={"body-section body-section-1 " + className}><DescriptionCard type="skills"/></div>;
 };
 
 const DescriptionSection2 = ({isVisible}) => {
@@ -51,7 +53,7 @@ const DescriptionSection2 = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"body-section " + className}><DescriptionCard className={"body-section " + className} type="traits"/></div>;
+    return <div className={"body-section body-section-2 " + className}><DescriptionCard type="traits"/></div>;
 };
 
 const DescriptionSection3 = ({isVisible}) => {
@@ -59,5 +61,5 @@ const DescriptionSection3 = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"body-section " + className}><DescriptionCard className={"body-section " + className} type="location"/></div>;
+    return <div className={"body-section body-section-3 " + className}><DescriptionCard type="location"/></div>;
 };

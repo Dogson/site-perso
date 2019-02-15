@@ -1,44 +1,65 @@
 import React, {Component} from 'react';
-import {FaLaptopCode, FaFlask, FaGlobeAfrica} from 'react-icons/fa';
+import {FaLaptopCode, FaFlask, FaGlobeAfrica, FaGripHorizontal} from 'react-icons/fa';
 
 export class DescriptionCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
 
     renderIcon() {
         switch (this.props.type) {
             case 'skills':
-                return <FaLaptopCode size="3em" className="card-icon"/>;
+                return <FaLaptopCode className={"card-icon " + this.state.className}/>;
             case 'traits' :
-                return <FaFlask size="3em" className="card-icon"/>;
+                return <FaFlask className={"card-icon " + this.state.className}/>;
             case 'location' :
-                return <FaGlobeAfrica size="3em" className="card-icon"/>;
+                return <FaGlobeAfrica className={"card-icon " + this.state.className}/>;
         }
     }
 
     renderBody() {
         switch (this.props.type) {
             case 'skills':
-                return <div style={{alignSelf: 'flex-start'}}>
-                    <p>Développeur <b>web</b> et <b>mobile</b> cherchant à
-                        concevoir et développer dans un <b>écosystème Javascript fullstack</b> (React JS et Native,
-                        NodeJS,
-                        Firebase).</p>
+                return <div>
+                    <div className="inline">Développeur <span className="emphasis">web</span> et <span
+                        className="emphasis">mobile</span></div>
+                    <div className="separator-icon">&#9830;</div>
+                    <div>Aime <span className="emphasis">concevoir</span> et <span className="emphasis">développer</span>
+                    </div>
+                    <div className="separator-icon">&#9830;</div>
+                    <div>Ecosystème <span className="emphasis">Javascript fullstack</span> <br/>(React JS et Native,
+                        NodeJS, Firebase).</div>
                 </div>;
             case 'traits' :
-                return <div style={{alignSelf: 'center'}}>
-                    <p>Je suis une personne <b>autonome</b> et passionnée par la découverte de nouveaux projets et de nouvelles
-                        problématiques métiers ou techniques.</p>
+                return <div>
+                    <div><span className="emphasis">Autonome</span> et <span className="emphasis">organisé</span></div>
+                    <div class="separator-icon">&#9830;</div>
+                    <div>Passionné par de nouveaux <span className="emphasis">défis métiers</span> ou <span
+                        className="emphasis">techniques</span>.</div>
+                    <div className="separator-icon">&#9830;</div>
+                    <div>Force <span class="emphasis">d'initiative</span> et de proposition</div>
                 </div>;
             case 'location' :
-                return <div style={{alignSelf: 'flex-end'}}>
-                <p>Je réside à l'étranger pour des raisons familiales, ce qui ne m'empêche pas de collaborer en télétravail
-                    sur des projets prenant place sur le territoire français en restant présent et disponible virtuellement
-                    tout au long de mes missions.</p>
-            </div>;
+                return <div>
+                    <div>Réside à <span className="emphasis">Dakar, Sénégal</span></div>
+                    <div className="separator-icon">&#9830;</div>
+                    <div>Maîtrise des outils indispensable au <span className="emphasis">télétravail </span></div>
+                    <div className="separator-icon">&#9830;</div>
+                    <div><span className="emphasis">Disponibilité</span> virtuelle totale</div>
+                </div>;
         }
     }
 
     render() {
-        return <div className="card-container">
+        return <div className={"card-container " + this.state.className}
+                    onMouseEnter={() => {
+                        this.setState({className: 'shadowed big'})
+                    }}
+                    onMouseLeave={() => {
+                        this.setState({className: ''})
+                    }}
+        >
             {this.renderIcon()}
             <div className="card-body">{this.renderBody()}</div>
         </div>
