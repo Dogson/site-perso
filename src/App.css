@@ -7,6 +7,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.App section {
+    display: flex;
+}
+
 .btn {
     background: transparent;
     color: white;

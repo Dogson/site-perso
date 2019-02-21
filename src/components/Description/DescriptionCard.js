@@ -34,11 +34,11 @@ export class DescriptionCard extends Component {
             case 'traits' :
                 return <div>
                     <div><span className="emphasis">Autonome</span> et <span className="emphasis">organisé</span></div>
-                    <div class="separator-icon">&#9830;</div>
+                    <div className="separator-icon">&#9830;</div>
                     <div>Passionné par de nouveaux <span className="emphasis">défis métiers</span> ou <span
                         className="emphasis">techniques</span>.</div>
                     <div className="separator-icon">&#9830;</div>
-                    <div>Force <span class="emphasis">d'initiative</span> et de proposition</div>
+                    <div>Force <span className="emphasis">d'initiative</span> et de proposition</div>
                 </div>;
             case 'location' :
                 return <div>

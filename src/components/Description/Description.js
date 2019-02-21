@@ -5,7 +5,7 @@ import {DescriptionCard} from "./DescriptionCard";
 
 export const Description = () => {
     return <div className="description-container">
-        <div class="wrapper">
+        <div className="wrapper">
             <TrackVisibility className="title-container" partialVisibility>
                 <DescriptionTitle/>
             </TrackVisibility>

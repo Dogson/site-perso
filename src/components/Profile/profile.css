@@ -51,22 +51,6 @@
     transition: all 0.1s ease-in-out;
 }
 
-.footer {
-    position: fixed;
-    bottom: -100px;
-    width: 100vw;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    transform: translateY(0px);
-    transition: transform 0.4s linear;
-}
-
-.footer.visible {
-    transform: translateY(-100px);
-}
-
 .btn.primary {
     background-color: var(--yellow);
     color: var(--bluegreen) !important;
@@ -74,10 +58,4 @@
 .btn.secondary {
     border: 2px solid var(--yellow);
     color: var(--yellow) !important;
-}
-
-@media screen and (max-width: 600px) {
-    .footer {
-        background-color: var(--bluegreen);
-    }
 }
