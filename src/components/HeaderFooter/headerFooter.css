@@ -18,11 +18,12 @@
     justify-content: center;
     background-color: transparent;
     transform: translateY(0px);
-    transition: transform 0.4s linear;
+    transition: all 0.4s linear;
 }
 
 .footer.visible {
     transform: translateY(-100px);
+    transition: all 0.4s linear;
 }
 
 @media screen and (max-width: 600px) {
@@ -57,6 +58,7 @@
     transition: max-width 0.3s ease-in-out;
     border: 2px solid var(--yellow);
     border-radius: 10px;
+    box-shadow: 2px 2px 6px var(--bluegreen);
 }
 
 .back-to-top .text {

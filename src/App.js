@@ -18,8 +18,6 @@ class App extends Component {
         this.handleScroll = this.handleScroll.bind(this);
         this.scrollToDescription = this.scrollToDescription.bind(this);
         this.scrollToSkills = this.scrollToSkills.bind(this);
-
-        window.onwheel = function(){ return false; }
     }
 
     componentDidMount() {
@@ -36,8 +34,14 @@ class App extends Component {
     }
 
     handleWheelOnProfile(e) {
-        if (this.state.isScrolling)
+        if (window.innerWidth < 1280)
             return;
+
+        e.preventDefault();
+
+        if (this.state.isScrolling) {
+            return;
+        }
 
         if (e.deltaY > 0) {
             this.scrollToDescription()
@@ -45,8 +49,14 @@ class App extends Component {
     }
 
     handleWheelOnDescription(e) {
-        if (this.state.isScrolling)
+        if (window.innerWidth < 1280)
             return;
+
+        e.preventDefault();
+
+        if (this.state.isScrolling) {
+            return;
+        }
 
         if (e.deltaY > 0) {
             this.scrollToSkills()
@@ -57,8 +67,14 @@ class App extends Component {
     }
 
     handleWheelOnSkills(e) {
-        if (this.state.isScrolling)
+        if (window.innerWidth < 1280)
             return;
+
+        e.preventDefault();
+
+        if (this.state.isScrolling) {
+            return;
+        }
 
         if (e.deltaY < 0) {
             this.scrollToDescription()

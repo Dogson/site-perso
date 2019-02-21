@@ -22,12 +22,8 @@ const DescriptionTitle = ({isVisible}) => {
     return <div className={"title " + className}><h1>Qui suis-je ?</h1></div>;
 };
 
-const DescriptionBody = ({isVisible}) => {
-    let className;
-    if (isVisible) {
-        className = 'visible';
-    }
-    return <div className={"body " + className}>
+const DescriptionBody = () => {
+    return <div className={"body "}>
         <TrackVisibility partialVisibility>
             <DescriptionSection1/>
         </TrackVisibility>

@@ -31,7 +31,7 @@
 
 .description-container .title.visible {
     opacity: 1;
-    transition: all 0.5s linear 0.3s;
+    transition: all 0.5s linear 0.1s;
     align-self: flex-start;
 }
 
@@ -55,21 +55,21 @@
     transform: translateX(0px);
     margin-right: 0;
     opacity: 1;
-    transition: all 0.5s linear 0.3s;
+    transition: all 0.5s linear 0.1s;
 }
 
 .description-container .body-section-2.visible {
     transform: translateX(0px);
     margin-right: 0;
     opacity: 1;
-    transition: all 0.5s linear 0.5s;
+    transition: all 0.5s linear 0.25s;
 }
 
 .description-container .body-section-3.visible {
     transform: translateX(0px);
     margin-right: 0;
     opacity: 1;
-    transition: all 0.5s linear 0.7s;
+    transition: all 0.5s linear 0.4s;
 }
 
 .description-container .shadowed {
