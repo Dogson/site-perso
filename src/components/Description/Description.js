@@ -5,7 +5,7 @@ import {DescriptionCard} from "./DescriptionCard";
 
 export const Description = () => {
     return <div className="description-container">
-        <div class="wrapper">
+        <div className="wrapper">
             <TrackVisibility className="title-container" partialVisibility>
                 <DescriptionTitle/>
             </TrackVisibility>
@@ -22,12 +22,8 @@ const DescriptionTitle = ({isVisible}) => {
     return <div className={"title " + className}><h1>Qui suis-je ?</h1></div>;
 };
 
-const DescriptionBody = ({isVisible}) => {
-    let className;
-    if (isVisible) {
-        className = 'visible';
-    }
-    return <div className={"body " + className}>
+const DescriptionBody = () => {
+    return <div className={"body "}>
         <TrackVisibility partialVisibility>
             <DescriptionSection1/>
         </TrackVisibility>

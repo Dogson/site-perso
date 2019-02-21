@@ -1,8 +1,8 @@
 import React from 'react';
-import "./profile.css";
+import "./headerFooter.css";
 import {SocialIcon} from 'react-social-icons';
 
-export class ProfileFooter extends React.Component {
+export class SocialIconsFooter extends React.Component {
 
     render() {
         let className = this.props.visible ? 'visible' : 'invisible';
