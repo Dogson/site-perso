@@ -25,7 +25,7 @@ class App extends Component {
     }
 
     handleScroll(e) {
-        if (window.pageYOffset >= window.innerHeight) {
+        if (window.pageYOffset >= window.innerHeight - 1) {
             this.setState({renderHeaderFooter: true});
         }
         else if (this.state.renderHeaderFooter) {
@@ -105,13 +105,19 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <section onWheel={(e) => {this.handleWheelOnProfile(e)}}>
+                <section onWheel={(e) => {
+                    this.handleWheelOnProfile(e)
+                }}>
                     <Profile onClick={this.scrollToDescription}/>
                 </section>
-                <section ref={this.descriptionRef} onWheel={(e) => {this.handleWheelOnDescription(e)}}>
+                <section ref={this.descriptionRef} onWheel={(e) => {
+                    this.handleWheelOnDescription(e)
+                }}>
                     <Description/>
                 </section>
-                <section ref={this.skillsRef} onWheel={(e) => {this.handleWheelOnSkills(e)}}>
+                <section ref={this.skillsRef} onWheel={(e) => {
+                    this.handleWheelOnSkills(e)
+                }}>
                     <Skills/>
                 </section>
                 <SocialIconsFooter visible={this.state.renderHeaderFooter}/>
