@@ -84,7 +84,8 @@
     transition: all 0.1s ease-in-out;
     padding-left: 8px;
     padding-right: 8px;
-    min-height: 400px;
+    max-height: 55vh;
+    height: 400px;
     min-width: 270px;
     max-width: 320px;
 }
@@ -111,7 +112,6 @@
 }
 
 .description-container .card-body {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
