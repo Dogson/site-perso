@@ -1,6 +1,3 @@
 .description-container {
-    min-height: 100vh;
     background-color: var(--greenblue);
-    width: 100vw;
-    max-width: 100%;
 }

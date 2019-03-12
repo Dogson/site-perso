@@ -4,7 +4,7 @@ import TrackVisibility from 'react-on-screen';
 import {SkillsCard} from "./SkillsCard";
 
 export const Skills = () => {
-    return <div className="skills-container">
+    return <div className="section-container skills-container">
         <div className="wrapper">
             <TrackVisibility className="title-container" partialVisibility>
                 <SkillsTitle/>

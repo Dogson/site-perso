@@ -41,3 +41,39 @@
     box-shadow: 2px 2px 6px var(--blue);
     transition: all 0.1s ease-in-out;
 }
+
+.section-container {
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.section-container .wrapper {
+    max-width: 1150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto auto 40px auto;
+}
+
+.section-container .title-container {
+    align-self: flex-start;
+    margin-top: 40px;
+}
+
+.section-container .title {
+    color: white;
+    font-size: 3em;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0;
+    margin-bottom: 80px;
+}
+
+.section-container .title.visible {
+    opacity: 1;
+    transition: all 0.5s linear 0.1s;
+    align-self: flex-start;
+}
