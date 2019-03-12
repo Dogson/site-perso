@@ -43,7 +43,7 @@ const SkillsSection1 = ({isVisible}) => {
     }
     return <div className={"body-section body-section-1 " + className}>
         <SkillsCard title="javascript"
-                    skills={["ReactJS + Native", "AngularJS", "NodeJS + Express", "Aurelia"]}/>
+                    skills={["ReactJS + Redux", "React Native", "AngularJS", "NodeJS + Express", "TypeScript"]}/>
     </div>;
 };
 
