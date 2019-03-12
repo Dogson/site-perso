@@ -8,9 +8,10 @@ export class Profile extends React.Component {
         return <div className="profile-container">
             <div>
                 <img src="/assets/img/avatar.png" alt="Gwenaël" className="avatar"/>
-                <div className="name">Gwenaël Girod</div>
+                <div className="name">Gwenaël <span className="emphasis">Girod</span></div>
             </div>
-            <div className="job-title">Développeur FullStack ReactJS & Native</div>
+            <div className="job-title">Développeur FullStack <span className="emphasis">ReactJS</span> & <span
+                className="emphasis">Native</span></div>
             <div>
                 <Button bsClass="btn primary" onClick={this.props.onClick}>Découvrir</Button>
                 <Button bsClass="btn secondary">ME CONTACTER</Button>
