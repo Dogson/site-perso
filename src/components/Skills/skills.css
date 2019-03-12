@@ -40,7 +40,7 @@
 }
 
 .skills-container .shadowed {
-    box-shadow: 3px 3px 8px var(--bluegreen);
+    box-shadow: 3px 3px 8px var(--blue);
     transition: box-shadow 0.1s ease-in-out;
 }
 
@@ -55,6 +55,14 @@
     height: 400px;
     min-width: 270px;
     max-width: 320px;
+}
+
+.skills-container .card-container .section-title {
+    font-family: var(--title-font-2);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--yellow);
 }
 
 .skills-container .card-icon {
@@ -79,13 +87,14 @@
 }
 
 .skills-container .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin-bottom: 30px;
+    margin-top: -25px;
+}
+
+.skills-container .card-body .skill {
+    letter-spacing: 1px;
 }
 
 .separator-icon {
     color: var(--yellow);
-    margin: 5px 0 5px 0;
 }

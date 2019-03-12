@@ -41,7 +41,10 @@ const SkillsSection1 = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"body-section body-section-1 " + className}><SkillsCard type="javascript"/></div>;
+    return <div className={"body-section body-section-1 " + className}>
+        <SkillsCard title="javascript"
+                    skills={["ReactJS + Native", "AngularJS", "NodeJS + Express", "Aurelia"]}/>
+    </div>;
 };
 
 const SkillsSection2 = ({isVisible}) => {
@@ -49,7 +52,10 @@ const SkillsSection2 = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"body-section body-section-2 " + className}><SkillsCard type="web"/></div>;
+    return <div className={"body-section body-section-2 " + className}>
+        <SkillsCard title="web"
+        skills={["Firebase", "HTML 5 + SASS/LESS", "Flexbox", "Responsive", "Bootstrap"]}/>
+    </div>;
 };
 
 const SkillsSection3 = ({isVisible}) => {
@@ -57,5 +63,8 @@ const SkillsSection3 = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"body-section body-section-3 " + className}><SkillsCard type="tools"/></div>;
+    return <div className={"body-section body-section-3 " + className}>
+        <SkillsCard title="outils"
+        skills={["Git (& SVN)", "NPM", "Babel", "Grunt", "IntelliJ"]}/>
+    </div>;
 };
