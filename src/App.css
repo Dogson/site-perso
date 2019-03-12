@@ -45,6 +45,7 @@
 .emphasis {
     font-weight: 500;
     color: var(--yellow);
+    font-size: 1.05em;
 }
 
 .section-container {
