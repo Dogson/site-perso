@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {FaLaptopCode, FaFlask, FaGlobeAfrica, FaGripHorizontal} from 'react-icons/fa';
 
-export class DescriptionCard extends Component {
+export class SkillsCard extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -9,18 +9,18 @@ export class DescriptionCard extends Component {
 
     renderIcon() {
         switch (this.props.type) {
-            case 'skills':
+            case 'javascript':
                 return <FaLaptopCode className={"card-icon " + this.state.className}/>;
-            case 'traits' :
+            case 'web' :
                 return <FaFlask className={"card-icon " + this.state.className}/>;
-            case 'location' :
+            case 'tools' :
                 return <FaGlobeAfrica className={"card-icon " + this.state.className}/>;
         }
     }
 
     renderBody() {
         switch (this.props.type) {
-            case 'skills':
+            case 'javascript':
                 return <div>
                     <div className="inline">Développeur <span className="emphasis">web</span> et <span
                         className="emphasis">mobile</span></div>
@@ -31,7 +31,7 @@ export class DescriptionCard extends Component {
                     <div>Ecosystème <span className="emphasis">Javascript fullstack</span> <br/>(React JS et Native,
                         NodeJS, Firebase).</div>
                 </div>;
-            case 'traits' :
+            case 'web' :
                 return <div>
                     <div><span className="emphasis">Autonome</span> et <span className="emphasis">organisé</span></div>
                     <div className="separator-icon">&#9830;</div>
@@ -40,7 +40,7 @@ export class DescriptionCard extends Component {
                     <div className="separator-icon">&#9830;</div>
                     <div>Force <span className="emphasis">d'initiative</span> et de proposition</div>
                 </div>;
-            case 'location' :
+            case 'tools' :
                 return <div>
                     <div>Réside à <span className="emphasis">Dakar, Sénégal</span></div>
                     <div className="separator-icon">&#9830;</div>

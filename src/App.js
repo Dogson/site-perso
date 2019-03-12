@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import {Profile} from "./components/Profile/Profile";
 import {SocialIconsFooter} from "./components/HeaderFooter/SocialIconsFooter";
+import {Skills} from "./components/Skills/Skills";
 import {Description} from "./components/Description/Description";
-import {Skills} from "./components/Skill/Skills";
 import {BackToTopHeader} from "./components/HeaderFooter/BackToTopHeader";
 
 class App extends Component {
