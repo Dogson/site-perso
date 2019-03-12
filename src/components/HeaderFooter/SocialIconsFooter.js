@@ -15,7 +15,7 @@ export class SocialIconsFooter extends React.Component {
                 <SocialIcon target="_blank" rel="noopener noreferrer" url="https://www.linkedin.com/in/ggirod/"
                             bgColor="#F0F3BD"
                             className="social-icon" style={{height: 40, width: 40, margin: '10px'}}/>
-                <SocialIcon target="_blank" rel="noopener noreferrer" url="https://soundcloud.com/gwena-l-dogson"
+                <SocialIcon target="_blank" rel="noopener noreferrer" url="mailto:gwenael.girod@gmail.net"
                             bgColor="#F0F3BD"
                             className="social-icon" style={{height: 40, width: 40, margin: '10px'}}/>
             </div>

@@ -5,6 +5,7 @@ import {SocialIconsFooter} from "./components/HeaderFooter/SocialIconsFooter";
 import {Skills} from "./components/Skills/Skills";
 import {Description} from "./components/Description/Description";
 import {BackToTopHeader} from "./components/HeaderFooter/BackToTopHeader";
+import {Prestations} from "./components/Contact/Prestations";
 
 class App extends Component {
     constructor(props) {
@@ -12,13 +13,15 @@ class App extends Component {
 
         this.state = {renderHeaderFooter: false};
 
+        this.profileRef = React.createRef();
         this.descriptionRef = React.createRef();
         this.skillsRef = React.createRef();
-        this.profileRef = React.createRef();
+        this.prestationsRef = React.createRef();
 
         this.handleScroll = this.handleScroll.bind(this);
         this.scrollToDescription = this.scrollToDescription.bind(this);
         this.scrollToSkills = this.scrollToSkills.bind(this);
+        this.scrollToPrestations = this.scrollToPrestations.bind(this);
         this.handleArrowKeyPress = this.handleArrowKeyPress.bind(this);
     }
 
@@ -79,8 +82,26 @@ class App extends Component {
             return;
         }
 
-        if (e.deltaY < 0) {
+        if (e.deltaY > 0) {
+            this.scrollToPrestations();
+        }
+        else {
             this.scrollToDescription()
+        }
+    }
+
+    handleWheelOnPrestations(e) {
+        if (window.innerWidth < 1280)
+            return;
+
+        e.preventDefault();
+
+        if (this.state.isScrolling) {
+            return;
+        }
+
+        if (e.deltaY < 0) {
+            this.scrollToSkills()
         }
     }
 
@@ -90,8 +111,11 @@ class App extends Component {
         const skillsHeight = this.skillsRef.current.clientHeight;
 
         if (window.innerWidth >= 1280 && e.keyCode === 40) {
-            e.preventDefault();
-            if (window.pageYOffset >= profileHeight) {
+            e.preventDefault()
+            if (window.pageYOffset >= profileHeight + descriptionHeight) {
+                this.scrollToPrestations();
+            }
+            else if (window.pageYOffset >= profileHeight) {
                 this.scrollToSkills();
             }
             else {
@@ -101,13 +125,23 @@ class App extends Component {
         }
         else if (window.innerWidth >= 1280 && e.keyCode === 38) {
             e.preventDefault();
-            if (window.pageYOffset >= profileHeight + descriptionHeight) {
+            if (window.pageYOffset >= profileHeight + descriptionHeight + skillsHeight) {
+                this.scrollToSkills();
+            }
+            else if (window.pageYOffset >= profileHeight + descriptionHeight) {
                 this.scrollToDescription();
             }
             else {
                 this.scrollToProfile();
             }
         }
+    }
+
+    scrollToProfile() {
+        let _this = this;
+        this.setState({isScrolling: true});
+        window.scrollTo(0, 0);
+        window.setTimeout(() => _this.setState({isScrolling: false}), 800);
     }
 
     scrollToDescription() {
@@ -124,10 +158,10 @@ class App extends Component {
         window.setTimeout(() => _this.setState({isScrolling: false}), 800);
     }
 
-    scrollToProfile() {
+    scrollToPrestations() {
         let _this = this;
         this.setState({isScrolling: true});
-        window.scrollTo(0, 0);
+        window.scrollTo(0, this.prestationsRef.current.offsetTop);
         window.setTimeout(() => _this.setState({isScrolling: false}), 800);
     }
 
@@ -150,6 +184,11 @@ class App extends Component {
                     this.handleWheelOnSkills(e)
                 }}>
                     <Skills/>
+                </section>
+                <section ref={this.prestationsRef} onWheel={(e) => {
+                    this.handleWheelOnPrestations(e)
+                }}>
+                    <Prestations/>
                 </section>
                 <SocialIconsFooter visible={this.state.renderHeaderFooter}/>
                 <BackToTopHeader visible={this.state.renderHeaderFooter}/>

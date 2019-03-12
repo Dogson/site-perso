@@ -24,6 +24,10 @@
     height: 50px;
 }
 
+a.btn {
+    padding-top: 12px;
+}
+
 .flexStart {
     align-self: flex-start;
 }
@@ -45,6 +49,7 @@
 .emphasis {
     font-weight: 500;
     color: var(--yellow);
+    font-size: 1.05em;
 }
 
 .section-container {
