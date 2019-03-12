@@ -14,7 +14,7 @@ export class Profile extends React.Component {
                 className="emphasis">Native</span></div>
             <div>
                 <Button bsClass="btn primary" onClick={this.props.onClick}>Découvrir</Button>
-                <Button bsClass="btn secondary">ME CONTACTER</Button>
+                <Button bsClass="btn secondary" href="mailto:gwenael.girod@gmail.net">ME CONTACTER</Button>
             </div>
             <div>
                 <SocialIcon target="_blank" rel="noopener noreferrer" url="https://github.com/Dogson"
@@ -24,7 +24,7 @@ export class Profile extends React.Component {
                 <SocialIcon target="_blank" rel="noopener noreferrer" url="https://www.linkedin.com/in/ggirod/"
                             bgColor="#F0F3BD"
                             className="social-icon" style={{height: 40, width: 40, margin: '10px'}}/>
-                <SocialIcon target="_blank" rel="noopener noreferrer" url="https://soundcloud.com/gwena-l-dogson"
+                <SocialIcon target="_blank" rel="noopener noreferrer" url="mailto:gwenael.girod@gmail.net"
                             bgColor="#F0F3BD"
                             className="social-icon" style={{height: 40, width: 40, margin: '10px'}}/>
             </div>

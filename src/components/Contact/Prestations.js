@@ -3,6 +3,7 @@ import React from "react";
 import "./prestations.css";
 import Slider from "react-slick";
 import {MdWebAsset, MdPhoneAndroid, MdPeopleOutline} from 'react-icons/md';
+import {Button} from "react-bootstrap";
 
 export const Prestations = () => {
     return <div className="section-container prestations-container">
@@ -29,10 +30,8 @@ const PrestationsBody = ({isVisible}) => {
 
     const settings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 1000,
-        lazyLoad: true,
-        centerMode: true,
         arrows: true,
         autoplaySpeed: 5000,
         dotsClass: "slick-dots my-dots"
@@ -125,4 +124,5 @@ const PrestationRegie = () => {
         </div>
     </div>
 };
+
 
