@@ -3,7 +3,6 @@ import React from "react";
 import "./prestations.css";
 import Slider from "react-slick";
 import {MdWebAsset, MdPhoneAndroid, MdPeopleOutline} from 'react-icons/md';
-import {Button} from "react-bootstrap";
 
 export const Prestations = () => {
     return <div className="section-container prestations-container">
