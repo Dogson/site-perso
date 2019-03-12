@@ -14,14 +14,17 @@ class App extends Component {
 
         this.descriptionRef = React.createRef();
         this.skillsRef = React.createRef();
+        this.profileRef = React.createRef();
 
         this.handleScroll = this.handleScroll.bind(this);
         this.scrollToDescription = this.scrollToDescription.bind(this);
         this.scrollToSkills = this.scrollToSkills.bind(this);
+        this.handleArrowKeyPress = this.handleArrowKeyPress.bind(this);
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('keydown', this.handleArrowKeyPress, false);
     }
 
     handleScroll(e) {
@@ -81,6 +84,32 @@ class App extends Component {
         }
     }
 
+    handleArrowKeyPress(e) {
+        const profileHeight = this.profileRef.current.clientHeight;
+        const descriptionHeight = this.descriptionRef.current.clientHeight;
+        const skillsHeight = this.skillsRef.current.clientHeight;
+
+        if (window.innerWidth >= 1280 && e.keyCode === 40) {
+            e.preventDefault();
+            if (window.pageYOffset >= profileHeight) {
+                this.scrollToSkills();
+            }
+            else {
+                this.scrollToDescription();
+            }
+
+        }
+        else if (window.innerWidth >= 1280 && e.keyCode === 38) {
+            e.preventDefault();
+            if (window.pageYOffset >= profileHeight + descriptionHeight) {
+                this.scrollToDescription();
+            }
+            else {
+                this.scrollToProfile();
+            }
+        }
+    }
+
     scrollToDescription() {
         let _this = this;
         this.setState({isScrolling: true});
@@ -107,12 +136,14 @@ class App extends Component {
             <div className="App">
                 <section onWheel={(e) => {
                     this.handleWheelOnProfile(e)
-                }}>
+                }}
+                         ref={this.profileRef}>
                     <Profile onClick={this.scrollToDescription}/>
                 </section>
-                <section ref={this.descriptionRef} onWheel={(e) => {
-                    this.handleWheelOnDescription(e)
-                }}>
+                <section ref={this.descriptionRef}
+                         onWheel={(e) => {
+                             this.handleWheelOnDescription(e)
+                         }}>
                     <Description/>
                 </section>
                 <section ref={this.skillsRef} onWheel={(e) => {
