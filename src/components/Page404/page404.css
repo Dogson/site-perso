@@ -1,0 +1,32 @@
+.not-found-container {
+    background-color: var(--bluegreen);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+}
+
+.not-found-container .title{
+    font-size: 3em;
+    margin: 15px;
+    color: white;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out 1s;
+}
+
+.not-found-container img {
+    margin-bottom: 60px;
+}
+
+.not-found-container .subtext {
+    font-size: 0.8em;
+    color: var(--yellow);
+    /*letter-spacing: 1px;*/
+    opacity: 0.9;
+    margin: 20px;
+}
