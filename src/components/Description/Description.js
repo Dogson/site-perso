@@ -80,7 +80,7 @@ const DescriptionSection2 = ({isVisible}) => {
                 className="emphasis">à distance</span>, tout en
                 restant <span className="emphasis">virtuellement disponible</span> à 100% pour participer activement aux
                 processus de <span className="emphasis">gestion de projet</span> qui
-                vont conviennent. </p>
+                vous conviennent. </p>
         </div>
         <div><FaGlobeAfrica className="description-icon"/></div>
     </div>;
