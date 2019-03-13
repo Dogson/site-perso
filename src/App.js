@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.css';
 import {Profile} from "./components/Profile/Profile";
 import {SocialIconsFooter} from "./components/HeaderFooter/SocialIconsFooter";
@@ -6,8 +7,24 @@ import {Skills} from "./components/Skills/Skills";
 import {Description} from "./components/Description/Description";
 import {BackToTopHeader} from "./components/HeaderFooter/BackToTopHeader";
 import {Prestations} from "./components/Contact/Prestations";
+import {Page404} from "./components/Page404/Page404";
 
 class App extends Component {
+
+    render() {
+        return <div className="App"><BrowserRouter>
+            <Switch>
+                <Route path="/" exact component={Home}/>
+                <Route component={Page404}/>
+            </Switch>
+        </BrowserRouter>
+        </div>
+    }
+}
+
+export default App;
+
+class Home extends Component {
     constructor(props) {
         super(props);
 
@@ -167,7 +184,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div>
                 <section onWheel={(e) => {
                     this.handleWheelOnProfile(e)
                 }}
@@ -196,5 +213,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;
