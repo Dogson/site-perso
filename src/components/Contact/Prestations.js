@@ -56,7 +56,7 @@ const PrestationSimpleWebPage = () => {
             Site internet <span class="emphasis">simple</span>
         </div>
         <div className="prestation-description">
-            Conception d'un site internet vitrine/marketting
+            Conception d'un site internet vitrine/marketing
         </div>
         <div className="prestations-actions">
             <div className="action">

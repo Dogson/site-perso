@@ -47,6 +47,14 @@ class Home extends Component {
         window.addEventListener('keydown', this.handleArrowKeyPress, false);
     }
 
+    preventScroll() {
+        return (window.innerWidth < 1280 ||
+            window.innerHeight < this.profileRef.current.clientHeight ||
+            window.innerHeight < this.descriptionRef.current.clientHeight ||
+            window.innerHeight < this.skillsRef.current.clientHeight ||
+            window.innerHeight < this.prestationsRef.current.clientHeight)
+    }
+
     handleScroll(e) {
         if (window.pageYOffset >= window.innerHeight - 1) {
             this.setState({renderHeaderFooter: true});
@@ -57,7 +65,7 @@ class Home extends Component {
     }
 
     handleWheelOnProfile(e) {
-        if (window.innerWidth < 1280)
+        if (this.preventScroll())
             return;
 
         e.preventDefault();
@@ -72,7 +80,7 @@ class Home extends Component {
     }
 
     handleWheelOnDescription(e) {
-        if (window.innerWidth < 1280)
+        if (this.preventScroll())
             return;
 
         e.preventDefault();
@@ -90,7 +98,7 @@ class Home extends Component {
     }
 
     handleWheelOnSkills(e) {
-        if (window.innerWidth < 1280)
+        if (this.preventScroll())
             return;
 
         e.preventDefault();
@@ -108,7 +116,7 @@ class Home extends Component {
     }
 
     handleWheelOnPrestations(e) {
-        if (window.innerWidth < 1280)
+        if (this.preventScroll())
             return;
 
         e.preventDefault();
@@ -127,8 +135,8 @@ class Home extends Component {
         const descriptionHeight = this.descriptionRef.current.clientHeight;
         const skillsHeight = this.skillsRef.current.clientHeight;
 
-        if (window.innerWidth >= 1280 && e.keyCode === 40) {
-            e.preventDefault()
+        if (!this.preventScroll() && e.keyCode === 40) {
+            e.preventDefault();
             if (window.pageYOffset >= profileHeight + descriptionHeight) {
                 this.scrollToPrestations();
             }
@@ -140,7 +148,7 @@ class Home extends Component {
             }
 
         }
-        else if (window.innerWidth >= 1280 && e.keyCode === 38) {
+        else if (!this.preventScroll() && e.keyCode === 38) {
             e.preventDefault();
             if (window.pageYOffset >= profileHeight + descriptionHeight + skillsHeight) {
                 this.scrollToSkills();
