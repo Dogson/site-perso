@@ -62,11 +62,11 @@ const PrestationSimpleWebPage = () => {
             <div className="action">
                 Maquettage
             </div>
-            <div className="separator-icon">&#9830;</div>
+            <div className="separator-icon">&#9830;&#xFE0E;</div>
             <div className="action">
                 Développement
             </div>
-            <div className="separator-icon">&#9830;</div>
+            <div className="separator-icon">&#9830;&#xFE0E;</div>
             <div className="action">
                 Hébergement
             </div>
@@ -87,11 +87,11 @@ const PrestationMobileApp = () => {
             <div className="action">
                 Développement
             </div>
-            <div className="separator-icon">&#9830;</div>
+            <div className="separator-icon">&#9830;&#xFE0E;</div>
             <div className="action">
                 Intégration des APIs Google
             </div>
-            <div className="separator-icon">&#9830;</div>
+            <div className="separator-icon">&#9830;&#xFE0E;</div>
             <div className="action">
                 Déploiement sur le Play Store
             </div>
@@ -112,11 +112,11 @@ const PrestationRegie = () => {
             <div className="action">
                 Réponse à un besoin technique précis
             </div>
-            <div className="separator-icon">&#9830;</div>
+            <div className="separator-icon">&#9830;&#xFE0E;</div>
             <div className="action">
                 Apport d'expertise sur les technologies front-end
             </div>
-            <div className="separator-icon">&#9830;</div>
+            <div className="separator-icon">&#9830;&#xFE0E;</div>
             <div className="action">
                 Participation à la conception d'applications complexes
             </div>

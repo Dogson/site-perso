@@ -24,7 +24,7 @@ export class SkillsCard extends Component {
                 return <div className="skill">{skill}</div>
             }
             return <div className="skill">{skill}
-                <div className="separator-icon">&#9830;</div>
+                <div className="separator-icon">&#9830;&#xFE0E;</div>
             </div>
         })
     }
