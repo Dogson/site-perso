@@ -7,7 +7,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    font-size: 1.4em;
     flex: 1;
     color: white;
 }

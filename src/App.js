@@ -6,7 +6,7 @@ import {SocialIconsFooter} from "./components/HeaderFooter/SocialIconsFooter";
 import {Skills} from "./components/Skills/Skills";
 import {Description} from "./components/Description/Description";
 import {BackToTopHeader} from "./components/HeaderFooter/BackToTopHeader";
-import {Prestations} from "./components/Contact/Prestations";
+import {Prestations} from "./components/Prestations/Prestations";
 import {Page404} from "./components/Page404/Page404";
 
 class App extends Component {
@@ -48,8 +48,13 @@ class Home extends Component {
     }
 
     preventScroll() {
-        return (window.innerWidth < 1280 ||
-            window.innerHeight < this.profileRef.current.clientHeight ||
+        console.log(window.innerHeight);
+        console.log(this.profileRef.current.clientHeight);
+        console.log(this.descriptionRef.current.clientHeight);
+        console.log(this.skillsRef.current.clientHeight);
+        console.log(this.prestationsRef.current.clientHeight);
+
+        return (window.innerHeight < this.profileRef.current.clientHeight ||
             window.innerHeight < this.descriptionRef.current.clientHeight ||
             window.innerHeight < this.skillsRef.current.clientHeight ||
             window.innerHeight < this.prestationsRef.current.clientHeight)

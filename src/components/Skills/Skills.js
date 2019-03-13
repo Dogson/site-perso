@@ -19,7 +19,7 @@ const SkillsTitle = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"title " + className}><h1>Compétences</h1></div>;
+    return <div className={"title " + className}>Compétences</div>;
 };
 
 const SkillsBody = () => {

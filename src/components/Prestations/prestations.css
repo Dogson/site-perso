@@ -4,7 +4,6 @@
 
 .prestations-container .body {
     opacity: 0;
-    font-size: 1.4em;
     color: white;
     border-top: 2px solid var(--yellow);
     border-bottom: 2px solid var(--yellow);
@@ -59,4 +58,11 @@
 .prestations-container .slick-arrow::before {
     color: var(--yellow);
     opacity: 0.7;
+}
+
+
+@media screen and (max-width: 1150px) {
+    .section-container .title-container {
+        align-self: center;
+    }
 }

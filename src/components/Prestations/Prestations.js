@@ -22,7 +22,7 @@ const PrestationsTitle = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"title " + className}><h1>Prestations</h1></div>;
+    return <div className={"title " + className}>Prestations</div>;
 };
 
 const PrestationsBody = ({isVisible}) => {

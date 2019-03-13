@@ -58,6 +58,10 @@ a.btn {
     max-width: 100%;
 }
 
+.section-container .body {
+    font-size: 1.4em;
+}
+
 .section-container .wrapper {
     max-width: 1150px;
     text-align: center;
@@ -69,17 +73,17 @@ a.btn {
 
 .section-container .title-container {
     align-self: flex-start;
-    margin-top: 40px;
 }
 
 .section-container .title {
     color: white;
-    font-size: 3em;
+    font-size: 2.8em;
     font-family: var(--title-font);
     text-transform: uppercase;
     letter-spacing: 3px;
     opacity: 0;
-    margin-bottom: 6vh;
+    margin-bottom: 60px;
+    margin-top: 40px;
 }
 
 .section-container .title.visible {
@@ -93,3 +97,15 @@ a.btn {
         align-self: center;
     }
 }
+
+@media screen and (max-height: 800px) {
+    .section-container .body {
+        font-size: 1.3em;
+    }
+    .section-container .title {
+        margin-bottom: 5vh;
+        margin-top: 3vh;
+        font-size: 2.1em;
+    }
+}
+

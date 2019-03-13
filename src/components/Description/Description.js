@@ -19,19 +19,13 @@ const DescriptionTitle = ({isVisible}) => {
     if (isVisible) {
         className = 'visible';
     }
-    return <div className={"title " + className}><h1>Qui suis-je ?</h1></div>;
+    return <div className={"title " + className}>Qui suis-je ?</div>;
 };
 
 const DescriptionBody = () => {
     return <div className={"body "}>
         <TrackVisibility partialVisibility>
-            {/*<DescriptionIcon1/>*/}
-        </TrackVisibility>
-        <TrackVisibility partialVisibility>
             <DescriptionSection1/>
-        </TrackVisibility>
-        <TrackVisibility partialVisibility>
-            {/*<DescriptionIcon2/>*/}
         </TrackVisibility>
         <TrackVisibility partialVisibility>
             <DescriptionSection2/>
