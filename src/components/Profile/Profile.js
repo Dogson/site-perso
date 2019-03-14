@@ -5,7 +5,7 @@ import {Button} from 'react-bootstrap';
 
 export class Profile extends React.Component {
     render() {
-        return <div className="profile-container">
+        return <div className="section-container profile-container">
             <div>
                 <img src="/assets/img/avatar.png" alt="Gwenaël" className="avatar"/>
                 <div className="name">Gwenaël <span className="emphasis">Girod</span></div>

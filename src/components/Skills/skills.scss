@@ -7,7 +7,8 @@
 .skills-container .body {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  //IE fix
+  justify-content: space-evenly;
   flex-wrap: wrap;
   flex: 1;
   color: white;
@@ -98,4 +99,16 @@
 
 .separator-icon {
   color: $yellow;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .skills-container .body {
+    justify-content: space-between;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .skills-container .body {
+    justify-content: space-between;
+  }
 }
