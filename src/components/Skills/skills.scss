@@ -11,14 +11,6 @@
   flex-wrap: wrap;
   flex: 1;
   color: white;
-
-
-  // workaround for space evenly on IE
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-  }
 }
 
 .skills-container .body-section {
