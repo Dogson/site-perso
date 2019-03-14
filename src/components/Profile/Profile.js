@@ -1,5 +1,5 @@
 import React from 'react';
-import "./profile.css";
+import "./profile.scss";
 import {SocialIcon} from 'react-social-icons';
 import {Button} from 'react-bootstrap';
 

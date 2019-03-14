@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import {Profile} from "./components/Profile/Profile";
 import {SocialIconsFooter} from "./components/HeaderFooter/SocialIconsFooter";
 import {Skills} from "./components/Skills/Skills";

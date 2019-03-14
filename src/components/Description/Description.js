@@ -1,5 +1,5 @@
 import React from 'react';
-import "./description.css";
+import "./description.scss";
 import TrackVisibility from 'react-on-screen';
 import {FaGlobeAfrica, FaReact} from 'react-icons/fa';
 
@@ -23,13 +23,15 @@ const DescriptionTitle = ({isVisible}) => {
 };
 
 const DescriptionBody = () => {
-    return <div className={"body "}>
-        <TrackVisibility partialVisibility={true}>
-            <DescriptionSection1/>
-        </TrackVisibility>
-        <TrackVisibility partialVisibility={true}>
-            <DescriptionSection2/>
-        </TrackVisibility>
+    return <div class="body-wrapper">
+        <div className={"body "}>
+            <TrackVisibility partialVisibility={true}>
+                <DescriptionSection1/>
+            </TrackVisibility>
+            <TrackVisibility partialVisibility={true}>
+                <DescriptionSection2/>
+            </TrackVisibility>
+        </div>
     </div>
 };
 
@@ -70,7 +72,8 @@ const DescriptionSection2 = ({isVisible}) => {
     return <div className={"body-section body-section-2 " + className}>
         <div className="transparent"><FaGlobeAfrica className="description-icon"/></div>
         <div><p>
-            <span className="emphasis">Aventurier</span> en informatique, mais pas seulement. Passioné de voyage depuis toujours, je
+            <span className="emphasis">Aventurier</span> en informatique, mais pas seulement. Passioné de voyage depuis
+            toujours, je
             suis actuellement en résidence à <span className="emphasis">Dakar, Sénégal</span>.
 
         </p>

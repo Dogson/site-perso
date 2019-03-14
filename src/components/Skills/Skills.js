@@ -1,5 +1,5 @@
 import React from 'react';
-import "./skills.css";
+import "./skills.scss";
 import TrackVisibility from 'react-on-screen';
 import {SkillsCard} from "./SkillsCard";
 

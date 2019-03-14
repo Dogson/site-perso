@@ -1,5 +1,5 @@
 import React from 'react';
-import "./headerFooter.css";
+import "./headerFooter.scss";
 import {SocialIcon} from 'react-social-icons';
 
 export class SocialIconsFooter extends React.Component {

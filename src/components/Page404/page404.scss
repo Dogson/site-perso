@@ -1,5 +1,7 @@
+@import "../../index";
+
 .not-found-container {
-    background-color: var(--bluegreen);
+    background-color: $bluegreen;
     color: white;
     display: flex;
     flex-direction: column;
@@ -11,7 +13,7 @@
     font-size: 3em;
     margin: 15px;
     color: white;
-    font-family: var(--title-font);
+    font-family: $title-font;
     text-transform: uppercase;
     letter-spacing: 3px;
     opacity: 1;
@@ -24,7 +26,7 @@
 
 .not-found-container .subtext {
     font-size: 0.8em;
-    color: var(--yellow);
+    color: $yellow;
     /*letter-spacing: 1px;*/
     opacity: 0.9;
     margin: 20px;

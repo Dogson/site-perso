@@ -1,18 +1,27 @@
+@import "../../index";
+
 .profile-container {
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    background-color: var(--bluegreen);
+    background-color: $bluegreen;
     width: 100vw;
     max-width:100%;
     color: white;
+
+    // workaround for space evenly on IE
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+    }
 }
 
 .avatar {
-    border: 3px solid var(--yellow);
+    border: 3px solid $yellow;
     height: 200px;
     width: 200px;
     z-index: 1;
@@ -24,7 +33,7 @@
     /*font-weight: bold;*/
     margin: 15px;
     color: white;
-    font-family: var(--title-font);
+    font-family: $title-font;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
@@ -35,7 +44,7 @@
     opacity: 0.8;
     margin: 15px;
     color: white;
-    font-family: var(--title-font);
+    font-family: $title-font;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -47,15 +56,15 @@
 
 .social-icon:hover {
     opacity: 1;
-    box-shadow: 3px 3px 8px var(--bluegreen);
+    box-shadow: 3px 3px 8px $bluegreen;
     transition: all 0.1s ease-in-out;
 }
 
 .btn.primary {
-    background-color: var(--yellow);
-    color: var(--bluegreen) !important;
+    background-color: $yellow;
+    color: $bluegreen !important;
 }
 .btn.secondary {
-    border: 2px solid var(--yellow);
-    color: var(--yellow) !important;
+    border: 2px solid $yellow;
+    color: $yellow !important;
 }

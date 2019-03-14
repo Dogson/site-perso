@@ -1,6 +1,6 @@
 import TrackVisibility from "react-on-screen";
 import React from "react";
-import "./prestations.css";
+import "./prestations.scss";
 import Slider from "react-slick";
 import {MdWebAsset, MdPhoneAndroid, MdPeopleOutline} from 'react-icons/md';
 

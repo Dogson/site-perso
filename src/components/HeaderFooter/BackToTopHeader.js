@@ -1,5 +1,5 @@
 import React from 'react';
-import "./headerFooter.css";
+import "./headerFooter.scss";
 import {FaArrowUp} from "react-icons/fa";
 
 export class BackToTopHeader extends React.Component {

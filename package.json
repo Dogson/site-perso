@@ -7,6 +7,7 @@
     "bootstrap": "^4.2.1",
     "css-vars-ponyfill": "^1.17.2",
     "es6-shim": "^0.35.5",
+    "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-bootstrap": "^0.32.4",
