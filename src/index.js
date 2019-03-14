@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import smoothscroll from "smoothscroll-polyfill"
+import * as es6 from "es6-shim"
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -12,5 +13,5 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-// Loading smoothscroll polyfill for edge and ie
+// Polyfills
 smoothscroll.polyfill();

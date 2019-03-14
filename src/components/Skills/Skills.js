@@ -6,7 +6,7 @@ import {SkillsCard} from "./SkillsCard";
 export const Skills = () => {
     return <div className="section-container skills-container">
         <div className="wrapper">
-            <TrackVisibility className="title-container" partialVisibility>
+            <TrackVisibility className="title-container" partialVisibility={true}>
                 <SkillsTitle/>
             </TrackVisibility>
             <SkillsBody/>
@@ -24,13 +24,13 @@ const SkillsTitle = ({isVisible}) => {
 
 const SkillsBody = () => {
     return <div className={"body "}>
-        <TrackVisibility partialVisibility>
+        <TrackVisibility partialVisibility={true}>
             <SkillsSection1/>
         </TrackVisibility>
-        <TrackVisibility partialVisibility>
+        <TrackVisibility partialVisibility={true}>
             <SkillsSection2/>
         </TrackVisibility>
-        <TrackVisibility partialVisibility>
+        <TrackVisibility partialVisibility={true}>
             <SkillsSection3/>
         </TrackVisibility>
     </div>

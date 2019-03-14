@@ -6,7 +6,7 @@ import {FaGlobeAfrica, FaReact} from 'react-icons/fa';
 export const Description = () => {
     return <div className="section-container description-container">
         <div className="wrapper">
-            <TrackVisibility className="title-container" partialVisibility>
+            <TrackVisibility className="title-container" partialVisibility={true}>
                 <DescriptionTitle/>
             </TrackVisibility>
             <DescriptionBody/>
@@ -24,10 +24,10 @@ const DescriptionTitle = ({isVisible}) => {
 
 const DescriptionBody = () => {
     return <div className={"body "}>
-        <TrackVisibility partialVisibility>
+        <TrackVisibility partialVisibility={true}>
             <DescriptionSection1/>
         </TrackVisibility>
-        <TrackVisibility partialVisibility>
+        <TrackVisibility partialVisibility={true}>
             <DescriptionSection2/>
         </TrackVisibility>
     </div>

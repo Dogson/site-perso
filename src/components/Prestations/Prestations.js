@@ -7,10 +7,10 @@ import {MdWebAsset, MdPhoneAndroid, MdPeopleOutline} from 'react-icons/md';
 export const Prestations = () => {
     return <div className="section-container prestations-container">
         <div className="wrapper">
-            <TrackVisibility className="title-container" partialVisibility>
+            <TrackVisibility className="title-container" partialVisibility={true}>
                 <PrestationsTitle/>
             </TrackVisibility>
-            <TrackVisibility partialVisibility>
+            <TrackVisibility partialVisibility={true}>
                 <PrestationsBody/>
             </TrackVisibility>
         </div>
