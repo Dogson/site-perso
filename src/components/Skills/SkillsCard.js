@@ -21,9 +21,9 @@ export class SkillsCard extends Component {
     renderSkills() {
         return this.props.skills.map((skill, i) => {
             if (i === this.props.skills.length - 1) {
-                return <div className="skill">{skill}</div>
+                return <div className="skill" key={i}>{skill}</div>
             }
-            return <div className="skill">{skill}
+            return <div className="skill" key={i}>{skill}
                 <div className="separator-icon">&#9830;&#xFE0E;</div>
             </div>
         })

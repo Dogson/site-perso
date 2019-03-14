@@ -30,15 +30,18 @@ class Home extends Component {
 
         this.state = {renderHeaderFooter: false};
 
-        this.profileRef = React.createRef();
-        this.descriptionRef = React.createRef();
-        this.skillsRef = React.createRef();
-        this.prestationsRef = React.createRef();
+        const profileRef = React.createRef();
+        const descriptionRef = React.createRef();
+        const skillsRef = React.createRef();
+        const prestationsRef = React.createRef();
+
+        this.state = {
+            refs: [profileRef, descriptionRef, skillsRef, prestationsRef],
+            currentElement: 0
+        };
 
         this.handleScroll = this.handleScroll.bind(this);
-        this.scrollToDescription = this.scrollToDescription.bind(this);
-        this.scrollToSkills = this.scrollToSkills.bind(this);
-        this.scrollToPrestations = this.scrollToPrestations.bind(this);
+        this.handleWheel = this.handleWheel.bind(this);
         this.handleArrowKeyPress = this.handleArrowKeyPress.bind(this);
     }
 
@@ -48,19 +51,29 @@ class Home extends Component {
     }
 
     preventScroll() {
-        console.log(window.innerHeight);
-        console.log(this.profileRef.current.clientHeight);
-        console.log(this.descriptionRef.current.clientHeight);
-        console.log(this.skillsRef.current.clientHeight);
-        console.log(this.prestationsRef.current.clientHeight);
-
-        return (window.innerHeight < this.profileRef.current.clientHeight ||
-            window.innerHeight < this.descriptionRef.current.clientHeight ||
-            window.innerHeight < this.skillsRef.current.clientHeight ||
-            window.innerHeight < this.prestationsRef.current.clientHeight)
+        return (window.innerHeight < this.state.refs[0].current.clientHeight ||
+            window.innerHeight < this.state.refs[1].current.clientHeight ||
+            window.innerHeight < this.state.refs[2].current.clientHeight ||
+            window.innerHeight < this.state.refs[3].current.clientHeight)
     }
 
-    handleScroll(e) {
+    handleWheel(e) {
+        if (this.preventScroll()) {
+            return;
+        }
+
+        e.preventDefault();
+        if (e.deltaY > 0) {
+            const elementToScroll = this.state.currentElement + 1 < this.state.refs.length ? this.state.currentElement + 1 : this.state.currentElement;
+            this.state.refs[elementToScroll].current.scrollIntoView({behavior: 'smooth'});
+        }
+        else {
+            const elementToScroll = this.state.currentElement > 0 ? this.state.currentElement - 1 : 0;
+            this.state.refs[elementToScroll].current.scrollIntoView({behavior: "smooth"});
+        }
+    }
+
+    handleScroll() {
         if (window.pageYOffset >= window.innerHeight - 1) {
             this.setState({renderHeaderFooter: true});
         }
@@ -69,155 +82,50 @@ class Home extends Component {
         }
     }
 
-    handleWheelOnProfile(e) {
-        if (this.preventScroll())
-            return;
-
-        e.preventDefault();
-
-        if (this.state.isScrolling) {
-            return;
-        }
-
-        if (e.deltaY > 0) {
-            this.scrollToDescription()
-        }
-    }
-
-    handleWheelOnDescription(e) {
-        if (this.preventScroll())
-            return;
-
-        e.preventDefault();
-
-        if (this.state.isScrolling) {
-            return;
-        }
-
-        if (e.deltaY > 0) {
-            this.scrollToSkills()
-        }
-        else {
-            this.scrollToProfile()
-        }
-    }
-
-    handleWheelOnSkills(e) {
-        if (this.preventScroll())
-            return;
-
-        e.preventDefault();
-
-        if (this.state.isScrolling) {
-            return;
-        }
-
-        if (e.deltaY > 0) {
-            this.scrollToPrestations();
-        }
-        else {
-            this.scrollToDescription()
-        }
-    }
-
-    handleWheelOnPrestations(e) {
-        if (this.preventScroll())
-            return;
-
-        e.preventDefault();
-
-        if (this.state.isScrolling) {
-            return;
-        }
-
-        if (e.deltaY < 0) {
-            this.scrollToSkills()
-        }
-    }
 
     handleArrowKeyPress(e) {
-        const profileHeight = this.profileRef.current.clientHeight;
-        const descriptionHeight = this.descriptionRef.current.clientHeight;
-        const skillsHeight = this.skillsRef.current.clientHeight;
-
         if (!this.preventScroll() && e.keyCode === 40) {
             e.preventDefault();
-            if (window.pageYOffset >= profileHeight + descriptionHeight) {
-                this.scrollToPrestations();
-            }
-            else if (window.pageYOffset >= profileHeight) {
-                this.scrollToSkills();
-            }
-            else {
-                this.scrollToDescription();
-            }
+            const elementToScroll = this.state.currentElement + 1 < this.state.refs.length ? this.state.currentElement + 1 : this.state.currentElement;
+            this.state.refs[elementToScroll].current.scrollIntoView({behavior: 'smooth'});
+            this.setState({currentElement: elementToScroll});
 
         }
         else if (!this.preventScroll() && e.keyCode === 38) {
             e.preventDefault();
-            if (window.pageYOffset >= profileHeight + descriptionHeight + skillsHeight) {
-                this.scrollToSkills();
-            }
-            else if (window.pageYOffset >= profileHeight + descriptionHeight) {
-                this.scrollToDescription();
-            }
-            else {
-                this.scrollToProfile();
-            }
+            const elementToScroll = this.state.currentElement > 0 ? this.state.currentElement - 1 : 0;
+            this.state.refs[elementToScroll].current.scrollIntoView({behavior: "smooth"});
+            this.setState({currentElement: elementToScroll});
         }
-    }
-
-    scrollToProfile() {
-        let _this = this;
-        this.setState({isScrolling: true});
-        window.scrollTo(0, 0);
-        window.setTimeout(() => _this.setState({isScrolling: false}), 800);
-    }
-
-    scrollToDescription() {
-        let _this = this;
-        this.setState({isScrolling: true});
-        window.scrollTo(0, this.descriptionRef.current.offsetTop);
-        window.setTimeout(() => _this.setState({isScrolling: false}), 800);
-    }
-
-    scrollToSkills() {
-        let _this = this;
-        this.setState({isScrolling: true});
-        window.scrollTo(0, this.skillsRef.current.offsetTop);
-        window.setTimeout(() => _this.setState({isScrolling: false}), 800);
-    }
-
-    scrollToPrestations() {
-        let _this = this;
-        this.setState({isScrolling: true});
-        window.scrollTo(0, this.prestationsRef.current.offsetTop);
-        window.setTimeout(() => _this.setState({isScrolling: false}), 800);
     }
 
     render() {
         return (
-            <div>
-                <section onWheel={(e) => {
-                    this.handleWheelOnProfile(e)
-                }}
-                         ref={this.profileRef}>
-                    <Profile onClick={this.scrollToDescription}/>
+            <div onWheel={(e) => {
+                this.handleWheel(e)
+            }}>
+                <section ref={this.state.refs[0]}
+                         onMouseEnter={(e) => {
+                             this.setState({currentElement: 0});
+                         }}>
+                    <Profile onClick={() => this.state.refs[1].current.scrollIntoView({behavior: "smooth"})}/>
                 </section>
-                <section ref={this.descriptionRef}
-                         onWheel={(e) => {
-                             this.handleWheelOnDescription(e)
+                <section ref={this.state.refs[1]}
+                         onMouseEnter={(e) => {
+                             this.setState({currentElement: 1});
                          }}>
                     <Description/>
                 </section>
-                <section ref={this.skillsRef} onWheel={(e) => {
-                    this.handleWheelOnSkills(e)
-                }}>
+                <section ref={this.state.refs[2]}
+                         onMouseEnter={(e) => {
+                             this.setState({currentElement: 2});
+                         }}>
                     <Skills/>
                 </section>
-                <section ref={this.prestationsRef} onWheel={(e) => {
-                    this.handleWheelOnPrestations(e)
-                }}>
+                <section ref={this.state.refs[3]}
+                         onMouseEnter={(e) => {
+                             this.setState({currentElement: 3});
+                         }}>
                     <Prestations/>
                 </section>
                 <SocialIconsFooter visible={this.state.renderHeaderFooter}/>

@@ -53,7 +53,7 @@ const PrestationSimpleWebPage = () => {
     return <div className="prestation-type">
         <MdWebAsset className="prestation-icon"/>
         <div className="prestation-title">
-            Site internet <span class="emphasis">simple</span>
+            Site internet <span className="emphasis">simple</span>
         </div>
         <div className="prestation-description">
             Conception d'un site internet vitrine/marketing
@@ -78,7 +78,7 @@ const PrestationMobileApp = () => {
     return <div className="prestation-type">
         <MdPhoneAndroid className="prestation-icon"/>
         <div className="prestation-title">
-            Application <span class="emphasis">mobile</span>
+            Application <span className="emphasis">mobile</span>
         </div>
         <div className="prestation-description">
             Conception d'une application mobile android
@@ -103,7 +103,7 @@ const PrestationRegie = () => {
     return <div className="prestation-type">
         <MdPeopleOutline className="prestation-icon"/>
         <div className="prestation-title">
-            Régie à <span class="emphasis">distance</span>
+            Régie à <span className="emphasis">distance</span>
         </div>
         <div className="prestation-description">
             Au sein de vos équipes sur un projet de plus grande envergure
