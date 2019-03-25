@@ -23,7 +23,7 @@ const DescriptionTitle = ({isVisible}) => {
 };
 
 const DescriptionBody = () => {
-    return <div class="body-wrapper">
+    return <div className="body-wrapper">
         <div className={"body "}>
             <TrackVisibility partialVisibility={true}>
                 <DescriptionSection1/>

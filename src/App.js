@@ -48,6 +48,7 @@ class Home extends Component {
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
         window.addEventListener('keydown', this.handleArrowKeyPress, false);
+        window.addEventListener("wheel", this.handleWheel, {passive: false} );
     }
 
     preventScroll() {
@@ -101,9 +102,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div onWheel={(e) => {
-                this.handleWheel(e)
-            }}>
+            <div>
                 <section ref={this.state.refs[0]}
                          onMouseEnter={(e) => {
                              this.setState({currentElement: 0});
